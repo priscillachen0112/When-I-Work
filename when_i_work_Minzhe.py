@@ -7,14 +7,14 @@ def get_files():
     a_to_z = string.ascii_lowercase[:]
     for letter in a_to_z:
         url = f'https://public.wiwdata.com/engineering-challenge/data/{letter}.csv'
-        wget.download(url, f'When I Work/{letter}.csv')
+        wget.download(url, f'When I Work/Data/{letter}.csv')
 
 
 def combine_a_to_z():
     a_to_z = string.ascii_lowercase[:]
     all_letters = pd.DataFrame()
     for letter in a_to_z:
-        letter_df = pd.read_csv(f'When I Work/{letter}.csv')
+        letter_df = pd.read_csv(f'When I Work/Data/{letter}.csv')
         all_letters = pd.concat([all_letters, letter_df])
     return all_letters
 
